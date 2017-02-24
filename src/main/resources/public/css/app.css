@@ -1,0 +1,28 @@
+body {
+    font-family: 'Pangolin', cursive;
+    background-image: url(/images/hustle.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: black;
+}
+
+.jumbotron {
+    background-image: url(/images/2.png);
+    height: 200px;
+}
+
+#todolist {
+    position: absolute;
+    top: 0px;
+    left: 500px;
+    text-align: center;
+}
+
+.lol1 {}
+
+.lol2 {}
+
+a {
+    text-decoration: none;
+    color: red;
+}
