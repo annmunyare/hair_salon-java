@@ -18,8 +18,6 @@ public class Client {
     // this.lastname = lastname;
     // this.notes = notes;
     this.stylistid = stylistid;
-    completed = false;
-    createdAt = LocalDateTime.now();
 
   }
 //check this out
@@ -46,7 +44,7 @@ public class Client {
 //saving new objects and assigning unique ids
   public void save() {
     try(Connection con = DB.sql2o.open()) {
-      String sql = "INSERT INTO clients (firstname) VALUES (:firstname)";
+      String sql = "INSERT INTO clients (firstname, stylistid) VALUES (:firstname, :stylistid)";
       this.id = (int) con.createQuery(sql, true)
         .addParameter("firstname", this.firstname)
         // .addParameter("lastname", this.lastname)

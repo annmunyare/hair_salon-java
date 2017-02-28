@@ -44,7 +44,7 @@ public class  Stylist {
 
   public void save() {
     try(Connection con = DB.sql2o.open()) {
-      String sql = "INSERT INTO stylists (firstname ) VALUES (:firstname)s";
+      String sql = "INSERT INTO stylists (firstname ) VALUES (:firstname)";
       this.id = (int) con.createQuery(sql, true)
         .addParameter("firstname", this.firstname)
         // .addParameter("lastname", this.lastname)
@@ -55,7 +55,7 @@ public class  Stylist {
   }
 
   public static List<Stylist> all() {
-    String sql = "SELECT * FROM stylists ORDER by lastname";
+    String sql = "SELECT * FROM stylists";
     try(Connection con = DB.sql2o.open()) {
       return con.createQuery(sql).executeAndFetch(Stylist.class);
     }

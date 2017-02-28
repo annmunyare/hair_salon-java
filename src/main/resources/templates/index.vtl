@@ -6,10 +6,10 @@
 <h2> All Stylists: </h2>
 
 #if($stylists)
-  <p>Click on a stylist to see their clients:</p>
+  <p><h3>Click on a stylist to see their clients:</h3></p>
   <ul>
     #foreach ($stylist in $stylists)
-      <li><a href="/stylists/$stylist.getId()">$stylist.getName()</a></li>
+      <li><a href="/stylists/$stylist.getId()">$stylist.getFirstname()</a></li>
     #end
   </ul>
 #else
@@ -21,8 +21,8 @@
   <h2>New stylist:</h2>
 
   <form action="/stylists" method="post">
-    <label for="name">stylist name</label>
-    <input id="name" name="name" type="text">
+    <label for="firstname"><h3>Stylist name</h3></label>
+    <input id="firstname" name="firstname" type="text">
     <button type="submit" class="btn btn-success">Add stylist</button>
   </form>
 </div>
@@ -30,15 +30,15 @@
 <div class="lol2">
 <h2>New client:</h2>
 <form action="/clients" method="post">
-  <label for="stylistId">Select a Stylist</label>
+  <label for="stylistId"><h3>Select a Stylist</h3></label>
   <select id='stylistId' name='stylistId' type='text'>
     #foreach($stylist in $stylists)
-      <option value="$stylist.getId()">$stylist.getName()</option>
+      <option value="$stylist.getId()">$stylist.getFirstname()</option>
     #end
   </select>
 
   <div class="form-group">
-    <label for="firstname">firstname</label>
+    <label for="firstname"><h5>firstname</h5></label>
     <input id="firstname" name="firstname" type="text" class="">
   </div>
 

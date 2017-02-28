@@ -1,8 +1,8 @@
-<h1>$stylist.getName() clients:</h1>
+<h1>$stylist.getFirstname() clients:</h1>
 
 <ul>
-  #foreach($client in $stylist.getclients())
-   <li><a href="/stylists/$stylist.getId()/clients/$client.getId()">$client.getfirstname()</a></li>
+  #foreach($client in $stylist.getClients())
+   <li><a href="/stylists/$stylist.getId()/clients/$client.getId()">$client.getFirstname()</a></li>
   #end
 </ul>
 
