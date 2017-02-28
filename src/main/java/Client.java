@@ -30,15 +30,15 @@ public class Client {
     } else {
       Client newClient = (Client) otherClient;
       return this.getFirstname().equals(newClient.getFirstname()) &&
-             this.getLastname().equals(newClient.getLastname()) &&
-             this.getNotes().equals(newClient.getNotes()) &&
+            //  this.getLastname().equals(newClient.getLastname()) &&
+            //  this.getNotes().equals(newClient.getNotes()) &&
              this.getId() == newClient.getId() &&
              this.getStylistid() == newClient.getStylistid();
     }
   }
 //returning all objects
   public static List<Client> all() {
-    String sql = "SELECT id, firstname, lastname,notes, stylistId FROM clients";
+    String sql = "SELECT id, firstname,  stylistId FROM clients";
     try(Connection con = DB.sql2o.open()) {
       return con.createQuery(sql).executeAndFetch(Client.class);
     }
@@ -46,11 +46,11 @@ public class Client {
 //saving new objects and assigning unique ids
   public void save() {
     try(Connection con = DB.sql2o.open()) {
-      String sql = "INSERT INTO clients (firstname,lastname, notes, stylistId) VALUES (:firstname,:lastname, :notes :stylistId)";
+      String sql = "INSERT INTO clients (firstname) VALUES (:firstname)";
       this.id = (int) con.createQuery(sql, true)
         .addParameter("firstname", this.firstname)
-        .addParameter("lastname", this.lastname)
-        .addParameter("notes", this.notes)
+        // .addParameter("lastname", this.lastname)
+        // .addParameter("notes", this.notes)
         .addParameter("stylistid", this.stylistid)
         .executeUpdate()
         .getKey();
@@ -98,12 +98,12 @@ public class Client {
 //updating a given clients
   public  void update(int id, String firstname, String lastname, String notes, int stylistid) {
     try(Connection con = DB.sql2o.open()) {
-      String sql = "UPDATE clients SET firstname = :firstname, lastname = :lastname, notes = :notes, stylistid = :stylistid WHERE id = :id";
+      String sql = "UPDATE clients SET firstname = :firstname,  stylistid = :stylistid WHERE id = :id";
       con.createQuery(sql)
         .addParameter("id", id)
         .addParameter("firstname", firstname)
-        .addParameter("lastname", lastname)
-        .addParameter("notes", notes)
+        // .addParameter("lastname", lastname)
+        // .addParameter("notes", notes)
         .addParameter("stylistid", stylistid)
         .executeUpdate();
     }

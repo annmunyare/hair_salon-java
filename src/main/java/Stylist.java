@@ -21,8 +21,8 @@ public class  Stylist {
     } else {
       Stylist newStylist = (Stylist) otherStylist;
       return this.getFirstname().equals(newStylist.getFirstname()) &&
-              this.getLastname().equals(newStylist.getLastname()) &&
-              this.getDescription().equals(newStylist.getDescription()) &&
+              // this.getLastname().equals(newStylist.getLastname()) &&
+              // this.getDescription().equals(newStylist.getDescription()) &&
               this.getId() == newStylist.getId();
     }
   }
@@ -44,11 +44,11 @@ public class  Stylist {
 
   public void save() {
     try(Connection con = DB.sql2o.open()) {
-      String sql = "INSERT INTO stylists (firstname,lastname,description) VALUES (:firstname,:lastname,:description)";
+      String sql = "INSERT INTO stylists (firstname ) VALUES (:firstname)s";
       this.id = (int) con.createQuery(sql, true)
         .addParameter("firstname", this.firstname)
-        .addParameter("lastname", this.lastname)
-        .addParameter("description", this.description)
+        // .addParameter("lastname", this.lastname)
+        // .addParameter("description", this.description)
         .executeUpdate()
         .getKey();
     }

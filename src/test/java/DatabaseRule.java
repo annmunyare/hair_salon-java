@@ -5,7 +5,7 @@ public class DatabaseRule extends ExternalResource {
 
   @Override
  protected void before() {
-   DB.sql2o = new Sql2o("jdbc:postgresql://localhost:5432/to_do_test", "postgres", "lol");
+   DB.sql2o = new Sql2o("jdbc:postgresql://localhost:5432/hair_salon_test", "postgres", "lol");
  }
 
  @Override
@@ -13,7 +13,7 @@ public class DatabaseRule extends ExternalResource {
    try(Connection con = DB.sql2o.open()) {
      String deletesQuery = "DELETE FROM clients *;";
      String deleteStylistsQuery = "DELETE FROM stylists *;";
-     con.createQuery(deleteTasksQuery).executeUpdate();
+     con.createQuery(deleteClientsQuery).executeUpdate();
      con.createQuery(deleteStylistsQuery).executeUpdate();
    }
  }

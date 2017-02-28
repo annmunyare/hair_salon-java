@@ -1,26 +1,38 @@
 body {
-    font-family: 'Pangolin', cursive;
-    background-image: url(/images/hustle.jpg);
+    font-family: 'Caveat', cursive;
+    background-image: url(/images/16.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    color: black;
+    color: red;
 }
 
 .jumbotron {
-    background-image: url(/images/2.png);
-    height: 200px;
+    background-image: url(/images/logo2.gif);
+    background-size: cover;
+    height: 170px;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
-#todolist {
-    position: absolute;
-    top: 0px;
-    left: 500px;
+ul {
     text-align: center;
+    margin-bottom: 40px;
+    list-style-position: inside;
 }
 
-.lol1 {}
+.lol3 {
+    align-items: center;
+}
 
-.lol2 {}
+.lol2 {
+    top: 80px;
+    margin-left: 605px;
+}
+
+.lol1 {
+    left: 5px;
+    width: 600px;
+}
 
 a {
     text-decoration: none;
