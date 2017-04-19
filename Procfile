@@ -1,1 +1,1 @@
-web: ./build/install/hair_salon/bin/hair_salon
+web: ./build/install/ip7/bin/ip7

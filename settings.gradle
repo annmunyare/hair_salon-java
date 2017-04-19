@@ -15,4 +15,4 @@ include 'api'
 include 'services:webservice'
 */
 
-rootProject.name = 'hair_salon'
+rootProject.name = 'ip7'
