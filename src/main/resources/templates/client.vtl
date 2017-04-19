@@ -1,9 +1,8 @@
 <h1>$client.getFirstname()</h1>
-<h2>Completed?:  $client.isCompleted()</h2>
-<h2> Belongs to: $stylist.getFirstname() list.</h2>
+<h2> Belongs to: $stylist.getFirstname() .</h2>
 
 <h2>Edit client:</h2>
-client
+
 <form action="/stylists/$client.getStylistId()/clients/$client.getId()" method="post">
   <label for="firstname">firstname</label>
   <input id="firstname" name="firstname" type="text">

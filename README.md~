@@ -12,7 +12,7 @@ This is a web application for a hair salon where the user can add a list of styl
 You will need [gradle](https://gradle.org/gradle-download/) and Postgres installed on your device.
 
 Enter the following commands in your terminal:
-*  clon
+* `git clone https://github.com/sheenanick/java-hair-salon` to clone this repository
 * `postgres` to start the Postgres server
 * `gradle run` to run the application
 
